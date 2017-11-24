@@ -1,4 +1,4 @@
--- requirements: gpio, net (local: motor, +network)
+-- requirements: gpio, net, pwm, wifi (local: motor, +network)
 server = {
   port = 9100
 }
