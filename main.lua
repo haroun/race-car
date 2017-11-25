@@ -32,7 +32,7 @@ gpio.write(ledPower.pin, gpio.HIGH)
 
 -- network
 network = require("network")
-network.setup("test", "test")
+network.setup("SSID", "password")
 
 function receive(socket, data, port, ip)
   print(string.format("received '%s' from %s:%d", data, ip, port))
