@@ -4,6 +4,14 @@ function network.setup(ssid, pwd)
   wifi.setphymode(wifi.PHYMODE_G)
   wifi.setmode(wifi.SOFTAP)
 
+  wifi.eventmon.register(wifi.eventmon.AP_STACONNECTED, function(T)
+    print("\n\t[wifi.AP] station connected (MAC: " .. T.MAC .. ", AID: " .. T.AID .. ")")
+  end)
+
+  wifi.eventmon.register(wifi.eventmon.AP_STADISCONNECTED, function(T)
+    print("\n\t[wifi.AP] station disconnected (MAC: " .. T.MAC .. ", AID: " .. T.AID .. ")")
+  end)
+
   config = {
     ssid = ssid,
     pwd = pwd,
